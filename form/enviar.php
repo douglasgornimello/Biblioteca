@@ -35,9 +35,9 @@ $mail->Port = 587;                                    // TCP port to connect to
 $mail->setFrom('', '');
 
 $emailList = explode(',', $recipient); //Separa a lista de email separando por virgula.
-foreach ($emailList as &$value) {
+foreach ($emailList as $value) {
 	//Atribui a lista de emails.
-	$mailer->AddAddress( $value );
+	$mail->AddAddress( $value );
 }
 unset($value);
 
